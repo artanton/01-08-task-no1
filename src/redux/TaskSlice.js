@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { fetchTasks, deleteTask, addTask } from './operators';
+import { fetchTasks, deleteTask, addTask, updateTask } from './operators';
 
 const taskSlice = createSlice({
   name: 'tasks',
@@ -15,7 +15,7 @@ const taskSlice = createSlice({
 
       // fetch
 
-      .addCase(fetchTasks.pending, (state) => {
+      .addCase(fetchTasks.pending, state => {
         state.isLoading = true;
       })
       .addCase(fetchTasks.fulfilled, (state, action) => {
@@ -39,6 +39,31 @@ const taskSlice = createSlice({
         state.tasks.push(action.payload);
       })
       .addCase(addTask.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
+
+      // update Task
+
+      .addCase(updateTask.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(updateTask.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        const { id, text } = action.payload;
+        console.log(action.payload);
+        if (text) {
+          const taskToUpdate = state.tasks.find(task => {
+            return task.id === id;
+          });
+          console.log(taskToUpdate);
+          if (taskToUpdate) {
+            taskToUpdate.text = text;
+          }
+        }
+      })
+      .addCase(updateTask.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       })

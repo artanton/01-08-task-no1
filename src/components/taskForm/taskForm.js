@@ -9,7 +9,7 @@ import {
 } from './taskFormStyled';
 import { useDispatch } from 'react-redux';
 import { addTask } from '../../redux/operators';
-import Notiflix from 'notiflix';
+// import Notiflix from 'notiflix';
 
 
 
@@ -24,10 +24,10 @@ export const TaskForm = ({ onClose }) => {
   const dispatchTask = useDispatch();
 
   const onAdd = (values, actions) => {
-    if (values.text.includes('!')) {
-      Notiflix.Notify.failure('The task field cannot contain "!" character.');
-      return;
-    }
+    // if (values.text.includes('!')) {
+    //   Notiflix.Notify.failure('The task field cannot contain "!" character.');
+    //   return;
+    // }
     const newTask = {
       text: values.text,
       date: new Date().toISOString(), 
