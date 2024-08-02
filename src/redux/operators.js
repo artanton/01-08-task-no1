@@ -43,7 +43,6 @@ export const updateTask = createAsyncThunk(
   'tasks/updateTask',
 
   async ({ taskId, text }, thunkAPI) => {
-    console.log(taskId, text);
     try {
       const response = await axios.put(`/tasks/${taskId}`, { text });
       return response.data;

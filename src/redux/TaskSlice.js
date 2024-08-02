@@ -52,12 +52,12 @@ const taskSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         const { id, text } = action.payload;
-        console.log(action.payload);
+
         if (text) {
           const taskToUpdate = state.tasks.find(task => {
             return task.id === id;
           });
-          console.log(taskToUpdate);
+
           if (taskToUpdate) {
             taskToUpdate.text = text;
           }

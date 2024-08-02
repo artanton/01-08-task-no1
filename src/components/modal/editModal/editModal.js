@@ -13,7 +13,7 @@ export const EditTaskModal = ({ taskId, initialText, onClose }) => {
   const [text, setText] = useState(initialText);
 
   const handleUpdate = () => {
-    console.log(taskId, text);
+   
     dispatch(updateTask({ taskId, text }));
     onClose();
   };
