@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 export const TaskRow = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding: '10px 0';
-  width: 80vw;
+  width: 70vw;
   margin-bottom: 10px;
 `;
 

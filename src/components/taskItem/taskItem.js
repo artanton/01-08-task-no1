@@ -64,9 +64,9 @@ export const TaskItem = ({ task, color }) => {
     return (
       <TaskRow >
         <Box sx={{ width: 1 }} >
-          <Box display="grid" gridTemplateColumns="repeat(16, 1fr)" gap={1} >
+          <Box display="grid" gridTemplateColumns="repeat(13, 1fr)" gap={1} >
             <Box gridColumn="span 1">
-              <Item >{id}</Item>
+              <Item style={{ backgroundColor: `${color}`}}>{id}</Item>
             </Box>
 
             <Box gridColumn="span 5">
