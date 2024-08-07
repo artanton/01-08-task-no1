@@ -22,16 +22,19 @@ export const EditButton = styled.button`
   background: none;
   border: none;
   text-align: center;
-  padding: 0 20px;
+  justify-content: center;
+  padding: 0 10px;
+
   cursor: pointer;
   /* display: flex;
   align-items: center; */
 `;
 export const AddSubTaskButton = styled.button`
   background: none;
+  padding: 0 10px;
   border: none;
   text-align: center;
-  padding: 0 ;
+  
   cursor: pointer;
 
 `;
