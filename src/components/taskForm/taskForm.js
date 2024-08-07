@@ -20,7 +20,7 @@ const taskSchema = Yup.object().shape({
     .required('Required'),
 });
 
-export const TaskForm = ({ onClose }) => {  
+export const TaskForm = ({ parentId, subLevel, onClose }) => {  
   const dispatchTask = useDispatch();
 
   const onAdd = (values, actions) => {
@@ -28,9 +28,18 @@ export const TaskForm = ({ onClose }) => {
     //   Notiflix.Notify.failure('The task field cannot contain "!" character.');
     //   return;
     // }
+    if (!parentId){
+      parentId = 0;
+      subLevel = 0 }
+      else{
+       subLevel+=1; 
+      };
+    
     const newTask = {
       text: values.text,
       date: new Date().toISOString(), 
+      parentId: parentId,
+      subLevel: subLevel,
     };
     
     dispatchTask(addTask(newTask));

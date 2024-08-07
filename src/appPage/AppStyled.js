@@ -18,6 +18,6 @@ export const Container = styled.div`
   justify-content: center;
   font-size: 16px;
   color: ${p => p.theme.colors.black};
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
 `;
