@@ -18,6 +18,7 @@ export const ModalContent = styled.div`
   border-radius: 8px;
   width: 600px;
   text-align: center;
+  position: relative;
 `;
 
 export const TextInput = styled.textarea`
@@ -36,3 +37,15 @@ export const ModalButton = styled.button`
   border-radius: 4px;
   cursor: pointer;
 `;
+
+
+export const CloseButton = styled.button`
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+`;
+

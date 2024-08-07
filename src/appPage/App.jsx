@@ -1,13 +1,13 @@
-import { GlobalStyle } from './GlobalStyle';
-import { TaskList } from './taskList/taskList';
+import { GlobalStyle } from '../globalStylization/GlobalStyle';
+import { TaskList } from '../components/taskList/taskList';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { selectTask, selectError, selectIsLoading } from './../redux/selectors';
+import { selectTask, selectError, selectIsLoading } from '../redux/selectors';
 import { useEffect } from 'react';
-import { fetchTasks } from './../redux/operators';
+import { fetchTasks } from '../redux/operators';
 import { MagnifyingGlass } from 'react-loader-spinner';
 
-import TemporaryDrawer from './swipeableEdgeDrawer/SwipeableEdgeDrawer';
+import TemporaryDrawer from '../components/swipeableEdgeDrawer/SwipeableEdgeDrawer';
 import { Container, DrawlerBtn, Loader } from './AppStyled';
 
 export const App = () => {

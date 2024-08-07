@@ -16,3 +16,5 @@ export function formatToString(date) {
     const pickedDate = `${day}-${month}-${year}   ${hour}:${minute}:${second}`;
     return pickedDate;
   }
+
+  

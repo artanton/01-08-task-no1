@@ -54,6 +54,7 @@ a {
 button {
   cursor: pointer;
   border: none;
+  color: inherit
 }
 
 img {
